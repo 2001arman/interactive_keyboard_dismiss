@@ -29,10 +29,11 @@ dev_dependencies:
   flutter_lints: ^6.0.0
 
 flutter:
+  # Fork (inbox-xadex-ios-only): iOS only. The Android side applies the
+  # legacy Kotlin Gradle Plugin, and the app can't switch to built-in Kotlin
+  # while adaptive_platform_ui still needs KGP; apps keep their own fallback
+  # on Android. Restore the android entry once both are on built-in Kotlin.
   plugin:
     platforms:
-      android:
-        package: com.manishpanday.interactive_keyboard_dismiss
-        pluginClass: InteractiveKeyboardDismissPlugin
       ios:
         pluginClass: InteractiveKeyboardDismissPlugin
